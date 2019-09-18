@@ -16,7 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier 'src/**/*.js' 'src/**/*.jsx'",
+    "prettier": "prettier src/**/*.js src/**/*.jsx",
     "prettier:fix": "npm run prettier -- --write"
   },
   "eslintConfig": {
@@ -35,6 +35,7 @@
     ]
   },
   "devDependencies": {
-    "husky": "^3.0.5"
+    "husky": "^3.0.5",
+    "prettier": "^1.18.2"
   }
 }
