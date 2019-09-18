@@ -6,7 +6,7 @@ const routes = Object.entries(pages);
 
 export const Dashboard = () => {
     return (
-        <main>
+        <main style={{ height: '100%' }}>
             <Navigation pages={routes} />
             <Switch>
                 {routes.map(([key, page]) => (
