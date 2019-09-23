@@ -1,7 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { NavLink as L } from 'react-router-dom';
 import { LogOut } from 'styled-icons/boxicons-regular/LogOut';
+import { Mixins } from '@cheapreats/react-ui';
 
 export const Navigation = ({ pages }) => {
     return (
@@ -20,12 +21,12 @@ export const Navigation = ({ pages }) => {
                         </NavLink>
                     </li>
                 ))}
-                <BottomItem>
-                    <NavLink>
+                <li>
+                    <LogoutLink>
                         <Icon as={LogOut} />
                         <Text>Logout</Text>
-                    </NavLink>
-                </BottomItem>
+                    </LogoutLink>
+                </li>
             </List>
         </Nav>
     );
@@ -33,17 +34,24 @@ export const Navigation = ({ pages }) => {
 
 const Nav = styled.nav`
     height: 100%;
-    background: royalblue;
     position: fixed;
     top: 0;
     left: 0;
-    width: 300px;
-    font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.8);
+    width: 220px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
 
-    @media (max-width: 768px) {
+    ${({ theme }) => `
+        background-color: ${theme.colors.primary};
+        font-family: ${theme.font.family};
+    `}
+
+    ${Mixins.media(
+        'tablet',
+        `
         width: auto;
-    }
+    `,
+    )}
 `;
 
 const List = styled.ul`
@@ -53,15 +61,18 @@ const List = styled.ul`
 `;
 
 const Icon = styled.svg`
-    width: 30px;
-    height: 50px;
-    margin: 0 20px 0 20px;
+    width: 35px;
+    height: 35px;
+    margin: 0 16px 0 20px;
 `;
 
 const Text = styled.p`
-    @media (max-width: 768px) {
+    ${Mixins.media(
+        'tablet',
+        `
         display: none;
-    }
+    `,
+    )}
 `;
 
 const NavLink = styled(L)`
@@ -72,20 +83,41 @@ const NavLink = styled(L)`
     margin: 0 10px 0 10px;
     border-radius: 10px;
 
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
     &.active {
-        color: rgba(255, 255, 255, 0.9);
         background-color: rgba(255, 255, 255, 0.2);
     }
 
-    @media (max-width: 768px) {
-        padding: 10px 0 10px 0;
-    }
+    ${Mixins.media(
+        'tablet',
+        `
+        padding: 15px 0 15px 0;
+    `,
+    )}
 `;
 
-const BottomItem = styled.li`
+const LogoutLink = styled(L)`
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 10px 0 10px 0;
     background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    padding: 5px 0 5px 0;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.12);
+    }
+
+    ${Mixins.media(
+        'tablet',
+        `
+        padding: 20px 0 20px 0;
+    `,
+    )}
 `;
