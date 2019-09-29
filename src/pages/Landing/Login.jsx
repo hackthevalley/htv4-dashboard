@@ -3,6 +3,7 @@ import './App.css';
 import './index.js';
 import { LandingPage } from '../../components';
 import { Button } from '@cheapreats/react-ui';
+import { MainTheme } from '@cheapreats/react-ui';
 
 export const Login = () => {
     return( 
@@ -26,7 +27,6 @@ export const Login = () => {
                     <h1>Hack the Valley 4</h1>
                 </div>
             </div>
-
 
             <div class="centered" id="leftdesktopmobile">
                 <div class="centered">
