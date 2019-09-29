@@ -8,6 +8,16 @@
   pointer-events: none;
 }
 
+/*Toggle mobile or desktop view*/
+@media only screen and (max-width: 600px) {
+  #rightdesktop {
+     display: none;
+     pointer-events: none;
+  }
+  #leftdesktop {
+  }
+}
+
 /* Split the screen in half */
 .split {
   height: 100%;
@@ -28,7 +38,8 @@
 /* Control the right side */
 .right {
   right: 0;
-  background-image:url(pusheen.jpg)
+  background-image:url(pusheen.jpg);
+  background-size: cover;
 }
 
 /* If you want the content centered horizontally and vertically */
@@ -46,40 +57,28 @@
   border-radius: 50%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
 h1 {
-  margin-top: 25px;
-  font-size: 400%;
+  margin-bottom: 200px;
+  font-size: 550%;
   color: white;
   text-align: center;
 }
 h2 {
-  font-size: 250%;
+  font-size: 300%;
   color: white;
   text-align: center;
-}
-h5 {
-  text-align: center
-}
-h6 {
-  text-align: center
 }
 h3 {
   font-size:100%;
   color: rgba(255, 255, 255, 0.575);
   text-align: center;
 }
-
+h4 {
+  font-size:90%;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
 body {
   background: #00bf8f;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #001510, #00bf8f);  /* Chrome 10-25, Safari 5.1-6 */
@@ -99,7 +98,17 @@ background: linear-gradient(to right, #001510, #00bf8f); /* W3C, IE 10+/ Edge, F
   }
 }
 
-
+input{
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  height:25px;
+  font-size:12pt;
+  }
+input[type="submit"]{
+  background-color: #61dafb;
+  color: #282c34
+}
 
 body {
   font-family: sans-serif;
@@ -116,19 +125,6 @@ a {
 }
 #wrapper {
   overflow: hidden;
-}
-#drop-area {
-  border: 2px dashed #ccc;
-  border-radius: 20px;
-  width: 680px;
-  float: left;
-  margin-left: 125px;
-  margin-top: 50px;
-  padding: 20px;
-  background-color: rgba(255,255,255,0.3);
-}
-#drop-area.highlight {
-  border-color: blue;
 }
 p {
   margin-top: 0;
@@ -159,22 +155,4 @@ b {
 }
 .button:hover {
   background: #ddd;
-}
-#fileElem {
-  display: none;
-}
-
-
-#sample-file-area {
-  border: 2px dashed #ccc;
-  border-radius: 20px;
-  background-color: rgba(44, 117, 177, 0.3);
-  width: 180px;
-  margin: 50px auto;
-  padding: 20px;
-  float:right;
-  margin-right: 20px
-}
-#drop-area.highlight {
-  border-color: purple;
 }
