@@ -15,6 +15,15 @@
      pointer-events: none;
   }
   #leftdesktop {
+    display: none;
+    pointer-events: none;
+ }
+}
+
+@media only screen and (min-width: 601px) {
+  #leftdesktopmobile {
+     display: none;
+     pointer-events: none;
   }
 }
 
@@ -30,9 +39,15 @@
 }
 
 /* Control the left side */
-.left {
+#leftdesktop {
   left: 0;
   background-image:linear-gradient(to right, #001510, #00bf8f);
+}
+#leftdesktopmobile {
+  background-image:linear-gradient(to right, #001510, #00bf8f);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 
 /* Control the right side */
