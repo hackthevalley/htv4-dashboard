@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useReducer } from 'react';
 import styled from 'styled-components';
 import { AddressCard } from 'styled-icons/fa-regular/AddressCard';
 import { DashboardPage } from '../../components';
@@ -36,56 +36,98 @@ const testUser = {
     ],
 };
 
+function reducer(state, action) {
+    switch (action.type) {
+        case 'update':
+            return { ...state, [action.name]: action.value };
+        case 'update_links':
+            const links = state.links.map(link =>
+                link.name === action.name
+                    ? { ...link, href: action.value }
+                    : link,
+            );
+            return { ...state, links };
+        default:
+            return state;
+    }
+}
+
 export const Profile = () => {
-    const [user, setUser] = useState({
+    const [user, dispatch] = useReducer(reducer, {
         ...testUser,
         currentPassword: '',
         newPassword: '',
         confirmPassword: '',
     });
-    const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
-    const onChangeLinks = e => {
-        const i = user.links.findIndex(l => l.name === e.target.name);
-        const links = [...user.links];
-        links[i] = { ...links[i], href: e.target.value };
-        setUser({ ...user, links });
-    };
+    const onChange = useCallback(
+        e =>
+            dispatch({
+                type: 'update',
+                name: e.target.name,
+                value: e.target.value,
+            }),
+        [],
+    );
+    const onChangeLinks = useCallback(
+        e =>
+            dispatch({
+                type: 'update_links',
+                name: e.target.name,
+                value: e.target.value,
+            }),
+        [],
+    );
 
-    const onSubmitGeneralInformation = e => {
-        e.preventDefault();
-        const updatedUser = {
-            firstname: user.firstname,
-            lastname: user.lastname,
-            gender: user.gender,
-            school: user.school,
-            bio: user.bio,
-            photo: user.photo,
-            links: user.links,
+    const onSubmitGeneralInformationChange = useCallback(
+        e => {
+            e.preventDefault();
+            const updatedUser = {
+                firstname: user.firstname,
+                lastname: user.lastname,
+                gender: user.gender,
+                school: user.school,
+                bio: user.bio,
+                photo: user.photo,
+                links: user.links,
+            };
+            console.log(updatedUser);
+        },
+        [user],
+    );
+    const onSubmitEmailChange = useCallback(
+        e => {
+            e.preventDefault();
+            console.log(user.email);
+        },
+        [user],
+    );
+    const onSubmitPasswordChange = useCallback(
+        e => {
+            e.preventDefault();
+            console.log(user.newPassword);
+        },
+        [user],
+    );
+
+    const checklist = useMemo(() => {
+        const completedProfile = profile => {
+            if (!profile.email) return false;
+            else if (!profile.firstname) return false;
+            else if (!profile.lastname) return false;
+            else if (!profile.school) return false;
+            else if (!profile.bio) return false;
+            else if (!profile.photo) return false;
+            return true;
         };
-        console.log(updatedUser);
-    };
-    const onSubmitEmail = e => {
-        e.preventDefault();
-        console.log(user.email);
-    };
-    const onSubmitPassword = e => {
-        e.preventDefault();
-        console.log(user.newPassword);
-    };
 
-    const completedProfile = profile => {
-        if (!profile.email) return false;
-        else if (!profile.firstname) return false;
-        else if (!profile.lastname) return false;
-        else if (!profile.school) return false;
-        else if (!profile.bio) return false;
-        else if (!profile.photo) return false;
-        return true;
-    };
-    const checklist = [
-        { label: 'Profile Completed', checked: completedProfile(user) },
-        { label: 'Application Accepted', checked: user.status === 'ACCEPTED' },
-    ];
+        return [
+            { label: 'Profile Completed', checked: completedProfile(user) },
+            {
+                label: 'Application Accepted',
+                checked: user.status === 'ACCEPTED',
+            },
+        ];
+    }, [user]);
 
     return (
         <DashboardPage heading="Profile">
@@ -93,7 +135,7 @@ export const Profile = () => {
             <Layout>
                 <Column>
                     <Heading>General Information</Heading>
-                    <form onSubmit={onSubmitGeneralInformation}>
+                    <form onSubmit={onSubmitGeneralInformationChange}>
                         <Input
                             name="firstname"
                             type="text"
@@ -147,11 +189,13 @@ export const Profile = () => {
                                 onChange={onChangeLinks}
                             />
                         ))}
-                        <SubmitButton />
+                        <ButtonContainer>
+                            <Button type="submit">Submit</Button>
+                        </ButtonContainer>
                     </form>
 
                     <Heading>Change Email</Heading>
-                    <form onSubmit={onSubmitEmail}>
+                    <form onSubmit={onSubmitEmailChange}>
                         <Input
                             name="email"
                             type="text"
@@ -160,11 +204,13 @@ export const Profile = () => {
                             autoComplete="email"
                             onChange={onChange}
                         />
-                        <SubmitButton />
+                        <ButtonContainer>
+                            <Button type="submit">Submit</Button>
+                        </ButtonContainer>
                     </form>
 
                     <Heading>Change Password</Heading>
-                    <form onSubmit={onSubmitPassword}>
+                    <form onSubmit={onSubmitPasswordChange}>
                         <Input
                             name="currentPassword"
                             type="password"
@@ -192,7 +238,9 @@ export const Profile = () => {
                             onChange={onChange}
                             required
                         />
-                        <SubmitButton />
+                        <ButtonContainer>
+                            <Button type="submit">Submit</Button>
+                        </ButtonContainer>
                     </form>
                 </Column>
                 <Column>
@@ -221,12 +269,6 @@ Profile.routeProps = {
     Icon: AddressCard,
     exact: true,
 };
-
-const SubmitButton = () => (
-    <ButtonContainer>
-        <Button type="submit">Submit</Button>
-    </ButtonContainer>
-);
 
 const Layout = styled.div`
     display: flex;
