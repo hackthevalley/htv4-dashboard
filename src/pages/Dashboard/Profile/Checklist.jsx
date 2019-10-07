@@ -4,18 +4,16 @@ import { Card, Checkbox, Heading } from '@cheapreats/react-ui';
 
 export const Checklist = ({ user }) => {
     const checklist = useMemo(() => {
-        const completedProfile = profile => {
-            if (!profile.email) return false;
-            else if (!profile.firstname) return false;
-            else if (!profile.lastname) return false;
-            else if (!profile.school) return false;
-            else if (!profile.bio) return false;
-            else if (!profile.photo) return false;
-            return true;
-        };
+        let completedProfile = true;
+        if (!user.email) completedProfile = false;
+        else if (!user.firstname) completedProfile = false;
+        else if (!user.lastname) completedProfile = false;
+        else if (!user.school) completedProfile = false;
+        else if (!user.bio) completedProfile = false;
+        else if (!user.photo) completedProfile = false;
 
         return [
-            { label: 'Profile Completed', checked: completedProfile(user) },
+            { label: 'Profile Completed', checked: completedProfile },
             {
                 label: 'Application Accepted',
                 checked: user.status === 'ACCEPTED',
@@ -29,12 +27,11 @@ export const Checklist = ({ user }) => {
             <Card>
                 {checklist.map(item => (
                     <ChecklistItem key={item.label}>
-                        <Checkbox
+                        <StyledCheckbox
                             label={item.label}
                             checked={item.checked}
                             disabled
                             readOnly
-                            style={{ cursor: 'default' }}
                         />
                     </ChecklistItem>
                 ))}
@@ -45,4 +42,10 @@ export const Checklist = ({ user }) => {
 
 const ChecklistItem = styled.div`
     padding: 12px 0px;
+`;
+
+const StyledCheckbox = styled(Checkbox)`
+    & input {
+        cursor: default;
+    }
 `;
