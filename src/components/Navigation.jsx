@@ -1,7 +1,8 @@
 import React from 'react';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import { NavLink as L } from 'react-router-dom';
 import { LogOut } from 'styled-icons/boxicons-regular/LogOut';
+import { QuestionCircle } from 'styled-icons/fa-regular/QuestionCircle';
 import { Mixins } from '@cheapreats/react-ui';
 
 export const Navigation = ({ pages }) => {
@@ -21,6 +22,16 @@ export const Navigation = ({ pages }) => {
                         </NavLink>
                     </li>
                 ))}
+                <li>
+                    <MailLink
+                        href="mailto:contact@hackthevalley.io"
+                        className={NavLink}
+                        target="_blank"
+                    >
+                        <Icon as={QuestionCircle} />
+                        <Text>Need help?</Text>
+                    </MailLink>
+                </li>
                 <li>
                     <LogoutLink>
                         <Icon as={LogOut} />
@@ -76,6 +87,30 @@ const Text = styled.p`
 `;
 
 const NavLink = styled(L)`
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    margin: 0 10px 0 10px;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &.active {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    ${Mixins.media(
+        'tablet',
+        `
+        padding: 15px 0 15px 0;
+    `,
+    )}
+`;
+
+const MailLink = styled.a`
     display: flex;
     align-items: center;
     text-decoration: none;
