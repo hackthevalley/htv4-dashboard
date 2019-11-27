@@ -47,6 +47,7 @@ export const Landing = () => {
 
 Landing.routeProps = {
     path: '/',
+    exact: true,
 };
 
 const StyledMain = styled.main`

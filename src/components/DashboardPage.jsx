@@ -1,11 +1,19 @@
 import React from 'react';
-import { Heading } from '@cheapreats/react-ui';
+import styled from 'styled-components';
+import { Heading, Loading, Mixins } from '@cheapreats/react-ui';
 
 export const DashboardPage = ({ children, heading = '', ...props }) => {
     return (
-        <section {...props}>
+        <StyledSection {...props}>
             <Heading bold>{heading}</Heading>
             {children}
-        </section>
+        </StyledSection>
     );
 };
+
+const StyledSection = styled(Loading)`
+    flex-grow: 1;
+    padding: 12px 20px;
+    overflow: auto;
+    ${Mixins.scroll}
+`;
