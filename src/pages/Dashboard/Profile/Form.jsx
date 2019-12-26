@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Button, Heading, Input, Select } from '@cheapreats/react-ui';
 
 export const Form = ({ user, dispatch }) => {
-    const onChange = useCallback(
+    const onChange = ({ target }) => dispatch({ name: target.name, value: target.value });useCallback(
         ({ target }) => dispatch({ name: target.name, value: target.value }),
         [dispatch],
     );

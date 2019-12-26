@@ -1,2 +1,2 @@
 export * from './hooks';
-export * from './Fontfaces';
+export * from './GlobalStyles';

@@ -1,9 +1,10 @@
-import React, { useReducer } from 'react';
+import React, { useState, useReducer } from 'react';
+import { AddressBook } from 'styled-icons/fa-regular/AddressBook';
+import { Mixins, Button } from '@cheapreats/react-ui';
 import styled from 'styled-components';
-import { AddressCard } from 'styled-icons/fa-regular/AddressCard';
 import { DashboardPage } from '../../../components';
-import { Checklist } from './Checklist';
-import { Form } from './Form';
+import { General } from './General';
+import { Portfolio } from './Portfolio';
 
 const testUser = {
     status: 'PENDING',
@@ -13,7 +14,6 @@ const testUser = {
     gender: 'MALE',
     school: 'UTSC',
     bio: 'actor/fighter',
-    photo: 'https://i.ibb.co/HF6q3BF/doggo.gif',
     links: [
         {
             name: 'github',
@@ -30,7 +30,7 @@ const testUser = {
     ],
 };
 
-function reducer(state, action) {
+const reducer = (state, action) => {
     switch (action.type) {
         case 'update_links':
             const links = state.links.map(link =>
@@ -45,46 +45,34 @@ function reducer(state, action) {
 }
 
 export const Profile = () => {
-    const [user, dispatch] = useReducer(reducer, {
+    const [dirty, setDirty] = useState(false);
+    const [user, _dispatch] = useReducer(reducer, {
         ...testUser,
-        currentPassword: '',
-        newPassword: '',
-        confirmPassword: '',
     });
 
+    const dispatch = data => {
+        setDirty(true);
+        _dispatch(data);
+    };
+
     return (
-        <DashboardPage heading="Profile">
-            <Image src={user.photo} alt="profile" />
-            <Layout>
-                <Column>
-                    <Form user={user} dispatch={dispatch} />
-                </Column>
-                <Column>
-                    <Checklist user={user} />
-                </Column>
-            </Layout>
+        <DashboardPage heading="My Profile">
+            <Form>
+                <General user={user} dispatch={dispatch}/>
+                <Portfolio user={user} dispatch={dispatch}/>
+                <Button disabled={!dirty}>Save Changes</Button>
+            </Form>
         </DashboardPage>
     );
 };
 
 Profile.routeProps = {
     path: '/:id',
-    Icon: AddressCard,
+    icon: AddressBook,
     exact: true,
 };
 
-const Layout = styled.div`
-    display: flex;
-`;
-
-const Column = styled.div`
-    flex-grow: 1;
-    padding: 12px 20px;
-`;
-
-const Image = styled.img`
-    margin: 0px 20px;
-    border: 3px solid white;
-    width: 100px;
-    height: 100px;
+const Form = styled.div`
+    ${Mixins.flex('column')}
+    max-width: 550px;
 `;

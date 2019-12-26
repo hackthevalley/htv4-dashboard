@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FileAlt } from 'styled-icons/fa-regular/FileAlt';
+import { FeatherAlt } from 'styled-icons/fa-solid/FeatherAlt';
 import { DashboardPage } from '../../../components';
 import { Form } from './Form';
 
@@ -99,6 +99,6 @@ export const Applications = () => {
 
 Applications.routeProps = {
     path: '/:id/app',
-    Icon: FileAlt,
+    icon: FeatherAlt,
     exact: true,
 };

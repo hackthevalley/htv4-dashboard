@@ -5,15 +5,21 @@ import { Heading, Loading, Mixins } from '@cheapreats/react-ui';
 export const DashboardPage = ({ children, heading = '', ...props }) => {
     return (
         <StyledSection {...props}>
-            <Heading bold>{heading}</Heading>
+            <Heading margin="0 0 20px" bold>
+                {heading}
+            </Heading>
             {children}
         </StyledSection>
     );
 };
 
 const StyledSection = styled(Loading)`
-    flex-grow: 1;
-    padding: 12px 20px;
-    overflow: auto;
     ${Mixins.scroll}
+    ${({ theme }) => `
+        background-color: ${theme.colors.input.default};
+    `}
+    flex-grow: 1;
+    padding: 20px 40px 40px;
+    position: relative;
+    overflow: auto;
 `;
