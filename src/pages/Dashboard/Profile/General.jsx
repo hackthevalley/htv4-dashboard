@@ -1,17 +1,19 @@
 import React from 'react';
-import { Heading, Select, Input, Card } from '@cheapreats/react-ui';
+import { Heading, Select, Datepicker, Input, Card } from '@cheapreats/react-ui';
 
 export const General = ({ user, dispatch }) => {
     const onChange = ({ target }) => {
-        console.log(target);
         dispatch({ name: target.name, value: target.value });
     };
+
     return (
-        <Card padding='15px 25px' margin='0 0 30px' flat>
-            <Heading size='1.5rem' margin='0 0 15px' type='h2' bold>General Information</Heading>
+        <Card padding="15px 25px" margin="0 0 30px" flat>
+            <Heading size="1.5rem" margin="0 0 15px" type="h2" bold>
+                General Information
+            </Heading>
             <Input
                 name="firstname"
-                type="text"
+                placeholder="Your First Name"
                 label="First Name"
                 value={user.firstname}
                 autoComplete="given-name"
@@ -19,31 +21,52 @@ export const General = ({ user, dispatch }) => {
             />
             <Input
                 name="lastname"
-                type="text"
+                placeholder="Your Last Name"
                 label="Last Name"
                 value={user.lastname}
                 autoComplete="family-name"
                 onChange={onChange}
             />
+            <Datepicker
+                name="birthday"
+                label="Birthday"
+                value={new Date(user.birthday)}
+                onChange={onChange}
+            />
+            <Input
+                name="phone"
+                placeholder="Phone Number"
+                label="Phone Number"
+                value={user.phone}
+                autoComplete="tel"
+                onChange={onChange}
+            />
             <Select
                 name="gender"
                 label="Gender"
+                placeholder="Select a gender"
                 value={user.gender}
-                autoComplete="sex"
                 onChange={onChange}
-                limit='3'
             >
-                <option value="UNDEFINED">Prefer not to answer</option>
-                <option value="MALE">Male</option>
                 <option value="FEMALE">Female</option>
+                <option value="MALE">Male</option>
+                <option value="OTHER">Prefer not to answer</option>
             </Select>
-            <Input
-                name="school"
-                type="text"
-                label="School"
-                value={user.school}
+            <Select
+                name="ethnicity"
+                label="Ethnicity"
+                placeholder="Select a ethnicity"
+                value={user.ethnicity}
                 onChange={onChange}
-            />
+            >
+                <option value="WHITE">White</option>
+                <option value="BLACK">Black</option>
+                <option value="ASIAN">Asian</option>
+                <option value="MIXED">Mixed</option>
+                <option value="HISPANIC">Hispanic</option>
+                <option value="INDIGENOUS">Indigienous</option>
+                <option value="OTHER">Prefer not to answer</option>
+            </Select>
         </Card>
     );
 };

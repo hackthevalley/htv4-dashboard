@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@cheapreats/react-ui": "^2.3.11",
+    "@cheapreats/react-ui": "^2.3.13",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
@@ -16,7 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier src/**/*.js src/**/*.jsx",
+    "prettier": "prettier 'src/**/*.js' 'src/**/*.jsx'",
     "prettier:fix": "npm run prettier -- --write"
   },
   "eslintConfig": {

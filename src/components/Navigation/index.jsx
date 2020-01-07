@@ -1,42 +1,43 @@
 import React from 'react';
 import { SignOutAlt } from 'styled-icons/fa-solid/SignOutAlt';
 import { Mixins, Button } from '@cheapreats/react-ui';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { CollapseText } from './CollapseText';
 import { logo } from '../../assets';
 
-export const Navigation = ({
-    children,
-    ...props
-}) => {
+export const Navigation = withRouter(({ children, history, ...props }) => {
+    const signOut = () => {
+        localStorage.clear();
+        history.push('/');
+    };
+
     return (
         <Container {...props}>
             <Header>
-                <Logo alt='Hack the Valley Logo' src={logo}/>
-                <CollapseText lineHeight='1.2' size='1.2rem' bold>
+                <Logo alt="Hack the Valley Logo" src={logo} />
+                <CollapseText lineHeight="1.2" size="1.2rem" bold>
                     <span>Hack the Valley</span>
                     <span>Dashboard</span>
                 </CollapseText>
             </Header>
-            <Items>
-                {children}
-            </Items>
-            <Footer icon={ SignOutAlt }>
-                <CollapseText size='0.95rem' bold>
+            <Items>{children}</Items>
+            <Footer onClick={signOut} icon={SignOutAlt}>
+                <CollapseText size="0.95rem" bold>
                     Logout
                 </CollapseText>
             </Footer>
         </Container>
     );
-};
+});
 
 const Container = styled.nav`
     ${Mixins.flex('column')}
     ${({ theme }) => `
         max-width: ${theme.dimensions.navigation.width}px;
-        box-shadow: ${theme.depth[1]};
     `}
     box-sizing: border-box;
+    background-color: white;
     flex-shrink: 0;
 `;
 
@@ -49,7 +50,6 @@ const Logo = styled.img`
 
 const Header = styled.div`
     ${Mixins.flex('flex-start', 'center')}
-    ${({ theme }) => console.log(theme)}
     padding: 30px 15px;
 `;
 
@@ -67,10 +67,7 @@ const Footer = styled(Button)`
         margin-right: 0;
     }
     ${({ theme }) => `
-        background-color: ${Mixins.darken(theme.colors.input.default, 0.06)};
-        ${Mixins.clickable(
-            Mixins.darken(theme.colors.input.default, 0.06),
-            0.04
-        )}
+        background-color: #e8e8e8;
+        ${Mixins.clickable('#e8e8e8', 0.04)}
     `}
 `;

@@ -4,20 +4,17 @@ import { Heading, Loading, Mixins } from '@cheapreats/react-ui';
 
 export const DashboardPage = ({ children, heading = '', ...props }) => {
     return (
-        <StyledSection {...props}>
+        <Container {...props}>
             <Heading margin="0 0 20px" bold>
                 {heading}
             </Heading>
             {children}
-        </StyledSection>
+        </Container>
     );
 };
 
-const StyledSection = styled(Loading)`
+const Container = styled(Loading)`
     ${Mixins.scroll}
-    ${({ theme }) => `
-        background-color: ${theme.colors.input.default};
-    `}
     flex-grow: 1;
     padding: 20px 40px 40px;
     position: relative;

@@ -1,34 +1,15 @@
-import React, { useState, useReducer } from 'react';
+import React, { useEffect, useState, useCallback, useReducer } from 'react';
 import { AddressBook } from 'styled-icons/fa-regular/AddressBook';
 import { Mixins, Button } from '@cheapreats/react-ui';
 import styled from 'styled-components';
+import { GET_USER, UPDATE_USER } from '../../../graphql/Profile';
 import { DashboardPage } from '../../../components';
-import { General } from './General';
-import { Portfolio } from './Portfolio';
+import { query } from '../../../utils';
 
-const testUser = {
-    status: 'PENDING',
-    email: 'jacky.chan@fake.utoronto.ca',
-    firstname: 'Jacky',
-    lastname: 'Chan',
-    gender: 'MALE',
-    school: 'UTSC',
-    bio: 'actor/fighter',
-    links: [
-        {
-            name: 'github',
-            href: 'https://github.com/cheapreats/react-ui-library',
-        },
-        {
-            name: 'linkedin',
-            href: 'https://github.com/cheapreats/react-ui-library',
-        },
-        {
-            name: 'website',
-            href: 'https://github.com/cheapreats/react-ui-library',
-        },
-    ],
-};
+import { Additional } from './Additional';
+import { Experience } from './Experience';
+import { Education } from './Education';
+import { General } from './General';
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -39,28 +20,76 @@ const reducer = (state, action) => {
                     : link,
             );
             return { ...state, links };
+        case 'set':
+            return action.data;
         default:
             return { ...state, [action.name]: action.value };
     }
-}
+};
 
 export const Profile = () => {
+    const [user, _dispatch] = useReducer(reducer, {});
+    const [loading, setLoading] = useState(false);
     const [dirty, setDirty] = useState(false);
-    const [user, _dispatch] = useReducer(reducer, {
-        ...testUser,
-    });
 
-    const dispatch = data => {
-        setDirty(true);
-        _dispatch(data);
+    const dispatch = useCallback(
+        data => {
+            setDirty(true);
+            _dispatch(data);
+        },
+        [setDirty, _dispatch],
+    );
+
+    const submit = async () => {
+        setLoading(true);
+        try {
+            const { _id, ..._user } = user;
+            await query(UPDATE_USER, {
+                user: _user,
+            });
+            setDirty(false);
+        } catch (err) {
+            console.error(err);
+        }
+        setLoading(false);
     };
 
+    useEffect(() => {
+        let mounted = true;
+        (async () => {
+            try {
+                const { getMe } = await query(GET_USER);
+                if (mounted)
+                    _dispatch({
+                        type: 'set',
+                        data: getMe,
+                    });
+            } catch (err) {
+                console.error(err);
+            }
+        })();
+
+        return () => {
+            mounted = false;
+        };
+    }, []);
+
     return (
-        <DashboardPage heading="My Profile">
+        <DashboardPage heading="My Profile" loading={!user._id}>
             <Form>
-                <General user={user} dispatch={dispatch}/>
-                <Portfolio user={user} dispatch={dispatch}/>
-                <Button disabled={!dirty}>Save Changes</Button>
+                <General user={user} dispatch={dispatch} />
+                <Education user={user} dispatch={dispatch} />
+                <Experience user={user} dispatch={dispatch} />
+                <Additional user={user} dispatch={dispatch} />
+                <Button
+                    onClick={submit}
+                    disabled={!dirty}
+                    loading={loading}
+                    color="text"
+                    primary
+                >
+                    Save Changes
+                </Button>
             </Form>
         </DashboardPage>
     );

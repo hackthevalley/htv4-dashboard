@@ -10,7 +10,7 @@ const extendTheme = theme => {
     theme.dimensions.select.itemHeight = 42;
     theme.dimensions.navigation.width = 260;
     theme.dimensions.navigation.icon = 50;
-    theme.font.family = `"${ FontName }", sans-serif`;
+    theme.font.family = `"${FontName}", sans-serif`;
     theme.dimensions.radius = 0;
     theme.colors.primary = '#1ccf00';
     theme.colors.secondary = '#b1b1b1';
@@ -19,9 +19,9 @@ const extendTheme = theme => {
 
 ReactDOM.render(
     <BrowserRouter>
-        <GlobalStyles/>
         <Global extend={extendTheme}>
             <App />
+            <GlobalStyles />
         </Global>
     </BrowserRouter>,
     document.getElementById('root'),

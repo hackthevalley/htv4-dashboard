@@ -15,13 +15,11 @@ export const NavigationItem = ({
 }) => {
     return (
         <Item as={type} className={className}>
-            <Link
-                as={external ? undefined : NavLink}
-                exact={exact}
-                to={to}
-            >
-                {icon && <Icon as={icon}/>}
-                <CollapseText size='0.95rem' color='inherit' bold>{children}</CollapseText>
+            <Link as={external ? undefined : NavLink} exact={exact} to={to}>
+                {icon && <Icon as={icon} />}
+                <CollapseText size="0.95rem" color="inherit" bold>
+                    {children}
+                </CollapseText>
             </Link>
         </Item>
     );
@@ -30,7 +28,7 @@ export const NavigationItem = ({
 const Icon = styled.svg`
     ${Mixins.transition(['color'])}
     ${({ theme }) => `
-        width: ${ theme.dimensions.navigation.icon }px;
+        width: ${theme.dimensions.navigation.icon}px;
     `}
     box-sizing: border-box;
     padding: 16px;
@@ -47,13 +45,13 @@ const Link = styled.a`
     text-decoration: none;
     color: inherit;
     ${({ theme }) => `
-        border-radius: ${ theme.dimensions.radius };
-        color: ${ theme.colors.secondary };
+        border-radius: ${theme.dimensions.radius};
+        color: ${theme.colors.secondary};
         &.active, &:hover {
             background-color: ${Mixins.darken('#ffffff', 0.02)};
-            color: ${ theme.colors.text };
+            color: ${theme.colors.text};
             & ${Icon} {
-                color: ${ theme.colors.primary };
+                color: ${theme.colors.primary};
             }
         }
     `}
