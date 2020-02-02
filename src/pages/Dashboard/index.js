@@ -1,3 +1,2 @@
-export * from './Profile';
-export * from './Applications';
+export * from './TempProfile';
 export * from './Schedule';

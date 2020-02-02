@@ -27,6 +27,18 @@ export const GET_USER = `
     }
 `;
 
+export const GET_USER_STATUS = `
+    {
+        getMe {
+            _id
+            firstname
+            lastname
+            status
+            email
+        }
+    }
+`;
+
 export const UPDATE_USER = `
     mutation updateUser($user: UserInput!) {
         updateMe(user: $user) {

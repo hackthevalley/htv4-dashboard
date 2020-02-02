@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Google } from 'styled-icons/fa-brands/Google';
 import { Button, Heading, Paragraph, Card as C } from '@cheapreats/react-ui';
 import styled from 'styled-components';
 import { CHECK_USER } from '../../graphql/Dashboard';
@@ -39,12 +38,10 @@ export const Login = ({ history }) => {
                         type="span"
                         bold
                     >
-                        Dashboard Login
+                        Hacker Dashboard
                     </Paragraph>
                 </Heading>
-                <Button icon={Google} full>
-                    Login with Google
-                </Button>
+                <Button full>Please check your email</Button>
             </Card>
         </LandingPage>
     );
