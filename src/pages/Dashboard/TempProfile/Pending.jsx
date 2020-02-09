@@ -38,7 +38,7 @@ export const Pending = ({ user, dispatch, dirty, setDirty }) => {
                         color="text"
                         full
                     >
-                        Avaiable
+                        Available
                     </Button>
                     <Button
                         onClick={() => dispatch('status', 'DECLINED')}
