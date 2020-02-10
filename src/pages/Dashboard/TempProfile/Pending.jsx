@@ -36,6 +36,7 @@ export const Pending = ({ user, dispatch, dirty, setDirty }) => {
                         primary={user.status === 'ACCEPTED'}
                         margin="10px"
                         color="text"
+                        disabled
                         full
                     >
                         Available
@@ -45,20 +46,15 @@ export const Pending = ({ user, dispatch, dirty, setDirty }) => {
                         primary={user.status === 'DECLINED'}
                         margin="10px"
                         color="text"
+                        disabled
                         full
                     >
                         Unavailable
                     </Button>
                 </Buttons>
             </Card>
-            <Button
-                onClick={submit}
-                loading={loading}
-                disabled={!dirty}
-                color="text"
-                primary
-            >
-                Save Changes
+            <Button onClick={submit} loading={loading} color="text" disabled>
+                RSVP is now closed
             </Button>
         </>
     );

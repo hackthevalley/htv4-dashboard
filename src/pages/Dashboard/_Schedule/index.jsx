@@ -72,7 +72,7 @@ export const Schedule = () => {
 
 Schedule.routeProps = {
     path: '/:id/schedule',
-    Icon: CalendarAlt,
+    icon: CalendarAlt,
     exact: true,
 };
 
