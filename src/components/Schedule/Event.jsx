@@ -121,6 +121,7 @@ const Content = styled.div`
             ? `
         margin-right: auto;
         ${Mixins.flex('column')}
+        padding-right: 10px;
     `
             : `
         flex-shrink: 0;
