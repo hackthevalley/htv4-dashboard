@@ -39,6 +39,7 @@ export const Event = ({ event }) => {
         <>
             <EventCard
                 indent={event.indent}
+                color={event.color}
                 onClick={select}
                 cells={cells}
                 padding="15px"
@@ -97,7 +98,7 @@ const EventCard = styled(Card)`
     ${Mixins.flex()}
     ${Mixins.clickable('#ffffff', 0.03)}
     ${Mixins.transition(['background-color'])}
-    ${({ top, cells, indent, theme }) => `
+    ${({ top, cells, indent, color, theme }) => `
         ${Mixins.position(
             'absolute',
             `0 2px 0 ${indent * 50}px`,
@@ -108,7 +109,7 @@ const EventCard = styled(Card)`
         max-height: ${(theme.dimensions.calendar.height + 1.5) * cells}px;
         min-height: ${(theme.dimensions.calendar.height + 1.5) * cells}px;
         height: ${(theme.dimensions.calendar.height + 1.5) * cells}px;
-        border-top: 4px solid ${theme.colors.primary};
+        border-top: 4px solid ${color};
     `}
     box-sizing: border-box;
     border-bottom: 1.5px solid rgba(0,0,0,0.05);
