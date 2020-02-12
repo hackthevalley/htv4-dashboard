@@ -26,7 +26,7 @@ export const Pending = ({ user, dispatch, dirty, setDirty }) => {
     return (
         <>
             <Card margin="0 0 20px" padding="20px" flat>
-                <Heading type="h2" bold size="1.4rem">
+                <Heading type="h2" size="1.4rem">
                     Thank you for applying to Hack the Valley {user.firstname}{' '}
                     {user.lastname}. Please let us know your avaliablity.
                 </Heading>
