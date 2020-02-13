@@ -25,7 +25,6 @@ const Layout = styled.div`
     margin-right: auto;
     overflow: auto;
     ${Mixins.scroll}
-    ${Mixins.flex()}
     ${({ theme }) => `
         border: 1.5px solid ${Mixins.darken(theme.colors.input.default, 0.05)};
     `}

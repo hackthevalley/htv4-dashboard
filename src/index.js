@@ -12,7 +12,7 @@ const extendTheme = theme => {
     theme.dimensions.navigation.icon = 50;
     theme.dimensions.calendar = {
         width: 340,
-        height: 80,
+        height: 90,
     };
     theme.font.family = `"Nunito", sans-serif`;
     theme.dimensions.radius = 0;

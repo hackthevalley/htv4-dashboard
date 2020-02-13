@@ -9,6 +9,7 @@ import {
     Heading,
     SmallText,
 } from '@cheapreats/react-ui';
+import { labels } from '../../schedule';
 
 const getDuration = (from, to) => {
     let diff = to.diff(from, 'm');
@@ -50,17 +51,25 @@ export const Event = ({ event }) => {
                     <Heading bold size="0.85rem" lineHeight="1.2" type="h3">
                         {event.title}
                     </Heading>
+                    <SmallText size="0.7rem" color="secondary" bold>
+                        {from.format('k:mm')} - {to.format('k:mm')}
+                    </SmallText>
                     <SmallText size="0.75rem" color="secondary" bold>
                         {event.location}
                     </SmallText>
                 </Content>
                 <Content>
-                    <Organizer size="0.65rem" margin="0 0 2px" bold>
+                    <Organizer
+                        color={event.color}
+                        size="0.65rem"
+                        margin="0 0 2px"
+                        bold
+                    >
+                        {labels[event.color]}
+                    </Organizer>
+                    <Organizer size="0.65rem" margin="2px 0 0" bold>
                         {event.organizer}
                     </Organizer>
-                    <SmallText size="0.7rem" color="secondary" bold>
-                        {from.format('k:mm')} - {to.format('k:mm')}
-                    </SmallText>
                 </Content>
             </EventCard>
             <Modal state={modalState} padding="20px" width="400px">
@@ -70,16 +79,19 @@ export const Event = ({ event }) => {
                             {event.title}
                         </Heading>
                         <SmallText color="secondary" bold>
+                            {from.format('k:mm')} - {to.format('k:mm')}
+                        </SmallText>
+                        <SmallText color="secondary" bold>
                             {event.location}
                         </SmallText>
                     </Content>
                     <Content>
-                        <Organizer margin="2px 0" bold>
+                        <Organizer color={event.color} margin="2px 0" bold>
+                            {labels[event.color]}
+                        </Organizer>
+                        <Organizer margin="2px 0 0" bold>
                             {event.organizer}
                         </Organizer>
-                        <SmallText color="secondary" bold>
-                            {from.format('k:mm')} - {to.format('k:mm')}
-                        </SmallText>
                     </Content>
                 </Header>
                 <Button
@@ -135,8 +147,8 @@ const Organizer = styled(SmallText)`
     border-radius: 4px;
     line-height: 1;
     color: white;
-    ${({ theme }) => `
-        background-color: ${theme.colors.secondary};
+    ${({ theme, color }) => `
+        background-color: ${color || theme.colors.secondary};
     `}
 `;
 

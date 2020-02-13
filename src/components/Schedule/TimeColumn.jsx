@@ -7,7 +7,7 @@ export const TimeColumn = forwardRef((props, ref) => {
     return (
         <Container>
             <DateHeader ref={ref} />
-            {new Array(38).fill().map((i, index) => (
+            {new Array(36).fill().map((i, index) => (
                 <Grid key={index}>
                     <SmallText size="0.65rem" margin="1px 6px" bold>
                         {(Math.floor(index / 2) + 8).toString().padStart(2, 0) %

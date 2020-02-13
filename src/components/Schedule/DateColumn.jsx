@@ -4,6 +4,17 @@ import styled from 'styled-components';
 import { DateHeader } from './DateHeader';
 import { Event } from './Event';
 
+const flat = list => {
+    return list.reduce((acc, item) => {
+        if (Array.isArray(item)) {
+            acc = acc.concat(flat(item));
+        } else {
+            acc.push(item);
+        }
+        return acc;
+    }, []);
+};
+
 const init = ({ events }) => {
     const map = [];
     events.forEach(event => {
@@ -14,7 +25,7 @@ const init = ({ events }) => {
     });
 
     const start = parseInt(events[0].time[0].split(':')[0]) % 24;
-    const res = map.concat(map.splice(0, start)).flat();
+    const res = flat(map.concat(map.splice(0, start)));
     let indent = -1;
 
     return events.map(event => {
@@ -33,7 +44,7 @@ export const DateColumn = ({ item }) => {
         <Container>
             <DateHeader date={item.date} />
             <Content>
-                {new Array(38).fill().map((i, index) => (
+                {new Array(36).fill().map((i, index) => (
                     <Grid key={index} />
                 ))}
                 {events.map((event, index) => (

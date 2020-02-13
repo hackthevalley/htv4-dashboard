@@ -6,6 +6,14 @@ const colors = {
     HTV: '#1ccf00',
 };
 
+export const labels = {
+    [colors.FOOD]: 'Food',
+    [colors.SUMMIT]: 'Submit',
+    [colors.WORKSHOP]: 'Workshop',
+    [colors.MLH]: 'MLH Event',
+    [colors.HTV]: 'HTV Event',
+};
+
 export const schedule = [
     {
         date: new Date(2020, 1, 14),

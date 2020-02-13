@@ -41,7 +41,16 @@ export const Login = ({ history }) => {
                         Hacker Dashboard
                     </Paragraph>
                 </Heading>
-                <Button full>Please check your email</Button>
+                <Button disabled full>
+                    Please check your email
+                </Button>
+                <Button
+                    onClick={() => history.push('/live')}
+                    margin="10px 0 0"
+                    full
+                >
+                    Events Schedule
+                </Button>
             </Card>
         </LandingPage>
     );
