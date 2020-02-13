@@ -1,64 +1,48 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Heading, Paragraph, Card as C } from '@cheapreats/react-ui';
-import styled from 'styled-components';
-import { CHECK_USER } from '../../graphql/Dashboard';
+import React from 'react';
+import './App.css';
+import './index.js';
 import { LandingPage } from '../../components';
-import { logo } from '../../assets';
-import { query } from '../../utils';
+import { Button } from '@cheapreats/react-ui';
+import { MainTheme } from '@cheapreats/react-ui';
 
-export const Login = ({ history }) => {
-    const [loading, setLoading] = useState(true);
+export const Login = () => {
+    return( 
+        <LandingPage>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+            <div class="split left" id="leftdesktop">
+                <div class="centered">
+                    <h2>Hacker Dashboard</h2>
+                    <h4>Please login or sign up if you haven't already.</h4>
+                    <form name="sendlogininfo">
+                        <h3>Email</h3> 
+                        <input type="text" name="email" placeholder="  Your hacker email"/><br/>
+                        <h3>Password</h3>
+                        <input type="password" name="passw" placeholder="  Your secret salt"/><br/> <br/>
+                        <Button text="Login" value="Login" id="login"></Button> <Button text="Sign Up" value="Sign Up" id="signup"></Button>
+                    </form>
+                </div>
+            </div>
+            <div class="split right" id="rightdesktop">
+                <div class="centered">
+                    <h1>Hack the Valley 4</h1>
+                </div>
+            </div>
 
-    useEffect(() => {
-        let mounted = true;
-        (async () => {
-            try {
-                const { getMe } = await query(CHECK_USER);
-                if (getMe._id) {
-                    history.replace(`/${getMe._id}`);
-                    return;
-                }
-            } catch (err) {}
-            if (mounted) setLoading(false);
-        })();
-
-        return () => {
-            mounted = false;
-        };
-    }, [history]);
-    return (
-        <LandingPage loading={loading}>
-            <Card>
-                <Logo src={logo} />
-                <Heading margin="0 0 30px" lineHeight="1" size="1.6rem" bold>
-                    <Text>Hack the Valley 4</Text>
-                    <Paragraph
-                        color="secondary"
-                        lineHeight="1"
-                        type="span"
-                        bold
-                    >
-                        Hacker Dashboard
-                    </Paragraph>
-                </Heading>
-                <Button disabled full>
-                    Please check your email
-                </Button>
-                <Button
-                    onClick={() => history.push('/live')}
-                    margin="10px 0 0"
-                    full
-                >
-                    Events Schedule
-                </Button>
-            </Card>
+            <div class="centered" id="leftdesktopmobile">
+                <div class="centered">
+                    <h2>Hacker Dashboard</h2>
+                    <h4>Please login or sign up if you haven't already.</h4>
+                    <form name="sendlogininfo">
+                        <h3>Email</h3> 
+                        <input type="text" name="email" placeholder="  Your hacker email"/><br/>
+                        <h3>Password</h3>
+                        <input type="password" name="passw" placeholder="  Your secret salt"/><br/> <br/>
+                        <Button text="Login" value="Login" id="login"></Button> <Button text="Sign Up" value="Sign Up" name="signup" id="signup"></Button>
+                    </form>
+                </div>
+            </div>
         </LandingPage>
     );
-};
-
-Login.routeProps = {
-    path: '/',
-    exact: true,
 };
 
 const Card = styled(C)`
