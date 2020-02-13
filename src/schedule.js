@@ -8,7 +8,7 @@ const colors = {
 
 export const labels = {
     [colors.FOOD]: 'Food',
-    [colors.SUMMIT]: 'Submit',
+    [colors.SUMMIT]: 'Summit',
     [colors.WORKSHOP]: 'Workshop',
     [colors.MLH]: 'MLH Event',
     [colors.HTV]: 'HTV Event',
@@ -32,8 +32,6 @@ export const schedule = [
                 location: 'IC Front Foyer',
                 organizer: 'Hack The Valley',
                 color: colors.HTV,
-                description:
-                    'Aliquam sit amet vulputate neque. Ut dapibus libero in tellus aliquam consectetur. Duis finibus nisl eu lectus mollis efficitur. Vivamus mattis hendrerit congue. In vitae mi libero. Suspendisse eget finibus neque. Fusce id augue pharetra, aliquam nulla eget, venenatis velit. Suspendisse tellus orci, tempus eget tincidunt id, tincidunt sed lectus. Donec vitae urna aliquet, interdum dolor eget, mollis dui. Sed condimentum congue fringilla. Curabitur sagittis, erat quis fringilla pharetra, magna ex vestibulum leo, in tempus lacus nulla nec odio. Quisque eu ligula ac tellus convallis tristique. Nulla commodo dolor ut ullamcorper blandit. Aliquam libero augue, sodales at sapien a, ultricies congue dui. Sed molestie justo nec congue consequat. Vivamus diam mi, tincidunt eget lorem eget, congue interdum ante.',
                 time: ['18:00', '20:00'],
             },
             {
