@@ -14,6 +14,15 @@ export const labels = {
     [colors.HTV]: 'HTV Event',
 };
 
+/*
+    title: String!,
+    location: String!,
+    organizer: String!,
+    color: String!,
+    time: [String!, String!], // [ from, to ]
+    description?: String,
+*/
+
 export const schedule = [
     {
         date: new Date(2020, 1, 14),
@@ -23,7 +32,8 @@ export const schedule = [
                 location: 'IC Front Foyer',
                 organizer: 'Hack The Valley',
                 color: colors.HTV,
-                link: '',
+                description:
+                    'Aliquam sit amet vulputate neque. Ut dapibus libero in tellus aliquam consectetur. Duis finibus nisl eu lectus mollis efficitur. Vivamus mattis hendrerit congue. In vitae mi libero. Suspendisse eget finibus neque. Fusce id augue pharetra, aliquam nulla eget, venenatis velit. Suspendisse tellus orci, tempus eget tincidunt id, tincidunt sed lectus. Donec vitae urna aliquet, interdum dolor eget, mollis dui. Sed condimentum congue fringilla. Curabitur sagittis, erat quis fringilla pharetra, magna ex vestibulum leo, in tempus lacus nulla nec odio. Quisque eu ligula ac tellus convallis tristique. Nulla commodo dolor ut ullamcorper blandit. Aliquam libero augue, sodales at sapien a, ultricies congue dui. Sed molestie justo nec congue consequat. Vivamus diam mi, tincidunt eget lorem eget, congue interdum ante.',
                 time: ['18:00', '20:00'],
             },
             {
@@ -31,7 +41,6 @@ export const schedule = [
                 location: 'IC 120',
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
-                link: '',
                 time: ['18:00', '20:00'],
             },
             {
@@ -39,7 +48,6 @@ export const schedule = [
                 location: 'IC 110',
                 organizer: 'Hack The Valley',
                 color: colors.HTV,
-                link: '',
                 time: ['19:00', '20:00'],
             },
             {
@@ -47,7 +55,6 @@ export const schedule = [
                 location: 'IC 130',
                 organizer: 'Hack The Valley',
                 color: colors.HTV,
-                link: '',
                 time: ['20:00', '22:00'],
             },
             {
@@ -55,7 +62,6 @@ export const schedule = [
                 location: 'IC 120',
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
-                link: '',
                 time: ['22:00', '0:00'],
             },
             {
@@ -63,7 +69,6 @@ export const schedule = [
                 location: 'IC 110',
                 organizer: 'Hack The Valley',
                 color: colors.HTV,
-                link: '',
                 time: ['22:00', '23:00'],
             },
             {
@@ -71,15 +76,13 @@ export const schedule = [
                 location: 'IC 130',
                 organizer: 'Facebook',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['23:00', '1:00'],
             },
             {
-                title: 'Intro to API with GCP',
+                title: 'Intro to APIs with GCP',
                 location: 'IC 220',
                 organizer: 'Kaveen',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['1:00', '2:00'],
             },
             {
@@ -87,7 +90,6 @@ export const schedule = [
                 location: 'IC 320',
                 organizer: 'Jun Zheng',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['1:00', '2:00'],
             },
         ],
@@ -97,18 +99,23 @@ export const schedule = [
         events: [
             {
                 title: 'Early Bird Breakfast',
+                location: 'Outside IC 120',
+                organizer: 'Hack The Valley',
+                color: colors.FOOD,
+                time: ['8:00', '10:00'],
+            },
+            {
+                title: 'How to Find and Validate a Valuable Idea',
                 location: 'IC 120',
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
-                link: '',
-                time: ['8:00', '10:00'],
+                time: ['8:00', '9:00'],
             },
             {
                 title: '1517 Office Hours',
                 location: 'IC Atrium',
                 organizer: '1517 Fund',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['9:00', '11:30'],
             },
             {
@@ -116,7 +123,6 @@ export const schedule = [
                 location: 'IC 220',
                 organizer: 'Frederic Pun',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['9:00', '10:00'],
             },
             {
@@ -124,7 +130,6 @@ export const schedule = [
                 location: 'IC 220',
                 organizer: 'William Yun',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['10:00', '11:00'],
             },
             {
@@ -132,7 +137,6 @@ export const schedule = [
                 location: 'IC 320',
                 organizer: 'FUSE',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['10:00', '11:00'],
             },
             {
@@ -140,7 +144,6 @@ export const schedule = [
                 location: 'IC 120',
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
-                link: '',
                 time: ['11:00', '13:00'],
             },
             {
@@ -148,7 +151,6 @@ export const schedule = [
                 location: 'IC 320',
                 organizer: 'Luki Danukarjanto',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['11:00', '12:00'],
             },
             {
@@ -156,7 +158,6 @@ export const schedule = [
                 location: 'IC 220',
                 organizer: 'Omar',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['11:00', '12:00'],
             },
             {
@@ -164,7 +165,6 @@ export const schedule = [
                 location: 'IC 220',
                 organizer: 'T4G',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['12:00', '13:00'],
             },
             {
@@ -172,7 +172,6 @@ export const schedule = [
                 location: 'IC 220',
                 organizer: 'Ralph / Sergey Gavrilyuk',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['13:00', '16:00'],
             },
             {
@@ -180,7 +179,6 @@ export const schedule = [
                 location: 'TBA',
                 organizer: 'Fly With Oragami',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['13:00', '18:00'],
             },
             {
@@ -188,7 +186,6 @@ export const schedule = [
                 location: 'Outside SC',
                 organizer: "Nasir's Hot Dogs",
                 color: colors.FOOD,
-                link: '',
                 time: ['13:00', '21:00'],
             },
             {
@@ -196,7 +193,6 @@ export const schedule = [
                 location: 'IC 320',
                 organizer: 'Eric Rafat',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['13:00', '14:00'],
             },
             {
@@ -204,7 +200,6 @@ export const schedule = [
                 location: 'IC 320',
                 organizer: 'Women in Code',
                 color: colors.SUMMIT,
-                link: '',
                 time: ['14:00', '17:00'],
             },
             {
@@ -212,7 +207,6 @@ export const schedule = [
                 location: 'IC/EV Atrium',
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
-                link: '',
                 time: ['15:00', '17:00'],
             },
             {
@@ -220,7 +214,6 @@ export const schedule = [
                 location: 'IC 220',
                 organizer: 'PayTrie',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['17:00', '18:00'],
             },
             {
@@ -228,7 +221,6 @@ export const schedule = [
                 location: 'IC 120',
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
-                link: '',
                 time: ['18:00', '21:00'],
             },
             {
@@ -236,7 +228,6 @@ export const schedule = [
                 location: 'IC 320',
                 organizer: 'Black in Tech',
                 color: colors.SUMMIT,
-                link: '',
                 time: ['18:00', '21:00'],
             },
             {
@@ -244,7 +235,6 @@ export const schedule = [
                 location: 'IC/EV Atrium',
                 organizer: 'Major League Hacking',
                 color: colors.MLH,
-                link: '',
                 time: ['21:00', '22:00'],
             },
             {
@@ -252,7 +242,6 @@ export const schedule = [
                 location: 'TBA',
                 organizer: 'Moe Ali',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['22:00', '23:00'],
             },
             {
@@ -260,7 +249,6 @@ export const schedule = [
                 location: 'IC 220',
                 organizer: 'Kevin Shen',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['22:00', '23:00'],
             },
             {
@@ -268,7 +256,6 @@ export const schedule = [
                 location: 'IC 220',
                 organizer: 'Samiul Haque',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['23:00', '0:00'],
             },
             {
@@ -276,7 +263,6 @@ export const schedule = [
                 location: 'TBA',
                 organizer: 'Moe Ali',
                 color: colors.WORKSHOP,
-                link: '',
                 time: ['0:00', '1:00'],
             },
         ],
@@ -289,7 +275,6 @@ export const schedule = [
                 location: 'IC 120',
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
-                link: '',
                 time: ['8:00', '10:00'],
             },
             {
@@ -297,7 +282,6 @@ export const schedule = [
                 location: 'TBA',
                 organizer: 'Hack The Valley',
                 color: colors.HTV,
-                link: '',
                 time: ['10:00', '10:30'],
             },
             {
@@ -305,7 +289,6 @@ export const schedule = [
                 location: 'IC/EV Atrium',
                 organizer: 'Hack The Valley',
                 color: colors.HTV,
-                link: '',
                 time: ['11:00', '15:00'],
             },
             {
@@ -313,7 +296,6 @@ export const schedule = [
                 location: 'IC 120',
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
-                link: '',
                 time: ['13:00', '15:00'],
             },
             {
@@ -321,7 +303,6 @@ export const schedule = [
                 location: 'IC 130',
                 organizer: 'Hack The Valley',
                 color: colors.HTV,
-                link: '',
                 time: ['15:00', '17:00'],
             },
         ],

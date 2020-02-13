@@ -8,6 +8,7 @@ import {
     Mixins,
     Heading,
     SmallText,
+    Paragraph,
 } from '@cheapreats/react-ui';
 import { labels } from '../../schedule';
 
@@ -43,7 +44,6 @@ export const Event = ({ event }) => {
                 color={event.color}
                 onClick={select}
                 cells={cells}
-                padding="15px"
                 top={top}
                 flat
             >
@@ -72,8 +72,8 @@ export const Event = ({ event }) => {
                     </Organizer>
                 </Content>
             </EventCard>
-            <Modal state={modalState} padding="20px" width="400px">
-                <Header>
+            <Modal state={modalState} width="400px">
+                <Header sticky>
                     <Content left>
                         <Heading bold lineHeight="1.2" type="h3">
                             {event.title}
@@ -94,13 +94,20 @@ export const Event = ({ event }) => {
                         </Organizer>
                     </Content>
                 </Header>
-                <Button
-                    onClick={() => modalState[1](false)}
-                    margin="20px 0 0"
-                    full
-                >
-                    Close
-                </Button>
+                <CardBody>
+                    {event.description && (
+                        <Paragraph margin="10px 0 0" bold>
+                            {event.description}
+                        </Paragraph>
+                    )}
+                    <Button
+                        onClick={() => modalState[1](false)}
+                        margin="20px 0 0"
+                        full
+                    >
+                        Close
+                    </Button>
+                </CardBody>
             </Modal>
         </>
     );
@@ -152,8 +159,21 @@ const Organizer = styled(SmallText)`
     `}
 `;
 
+const CardBody = styled.div`
+    padding: 0 20px 20px;
+`;
+
 const Header = styled.div`
     ${Mixins.flex()}
+    ${({ sticky }) =>
+        sticky
+            ? `
+        padding: 20px;
+        position: sticky;
+        background-color: white;
+        top: 0;
+    `
+            : ''}
     ${Mixins.media(
         'phone',
         `
