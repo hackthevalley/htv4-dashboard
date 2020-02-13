@@ -30,6 +30,7 @@ export const schedule = [
             {
                 title: 'Registration',
                 location: 'IC Front Foyer',
+                description: ``,
                 organizer: 'Hack The Valley',
                 color: colors.HTV,
                 time: ['18:00', '20:00'],
@@ -37,6 +38,7 @@ export const schedule = [
             {
                 title: 'Dinner',
                 location: 'IC 120',
+                description: `Pizza`,
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
                 time: ['18:00', '20:00'],
@@ -44,13 +46,15 @@ export const schedule = [
             {
                 title: 'Team Building Workshop',
                 location: 'IC 110',
-                organizer: 'Hack The Valley',
+                description: `Don't have a team? No sweat! Stick back after opening ceremony and we'll help you form your group!`,
+                organizer: 'Hack The Valley - Moe Ali',
                 color: colors.HTV,
                 time: ['19:00', '20:00'],
             },
             {
                 title: 'Opening Ceremony',
                 location: 'IC 130',
+                description: ``,
                 organizer: 'Hack The Valley',
                 color: colors.HTV,
                 time: ['20:00', '22:00'],
@@ -58,6 +62,7 @@ export const schedule = [
             {
                 title: 'Midnight Snack',
                 location: 'IC 120',
+                description: `Bubble Tea`,
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
                 time: ['22:00', '0:00'],
@@ -65,6 +70,7 @@ export const schedule = [
             {
                 title: 'Team Building Workshop #2',
                 location: 'IC 110',
+                description: `Still don't have a team? No sweat! Come to IC110 and we'll help you form your group!`,
                 organizer: 'Hack The Valley',
                 color: colors.HTV,
                 time: ['22:00', '23:00'],
@@ -72,6 +78,7 @@ export const schedule = [
             {
                 title: 'Facebook Workshop',
                 location: 'IC 130',
+                description: ``,
                 organizer: 'Facebook',
                 color: colors.WORKSHOP,
                 time: ['23:00', '1:00'],
@@ -79,13 +86,15 @@ export const schedule = [
             {
                 title: 'Intro to APIs with GCP',
                 location: 'IC 220',
+                description: ``,
                 organizer: 'Kaveen',
                 color: colors.WORKSHOP,
                 time: ['1:00', '2:00'],
             },
             {
-                title: 'CheaprEats Workshop',
+                title: 'GraphQL Workshop',
                 location: 'IC 320',
+                description: ``,
                 organizer: 'Jun Zheng',
                 color: colors.WORKSHOP,
                 time: ['1:00', '2:00'],
@@ -98,6 +107,7 @@ export const schedule = [
             {
                 title: 'Early Bird Breakfast',
                 location: 'Outside IC 120',
+                description: `Crepes`,
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
                 time: ['8:00', '10:00'],
@@ -105,6 +115,7 @@ export const schedule = [
             {
                 title: 'How to Find and Validate a Valuable Idea',
                 location: 'IC 120',
+                description: ``,
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
                 time: ['8:00', '9:00'],
@@ -112,6 +123,7 @@ export const schedule = [
             {
                 title: '1517 Office Hours',
                 location: 'IC Atrium',
+                description: ``,
                 organizer: '1517 Fund',
                 color: colors.WORKSHOP,
                 time: ['9:00', '11:30'],
@@ -119,6 +131,7 @@ export const schedule = [
             {
                 title: 'Intro to React',
                 location: 'IC 220',
+                description: ``,
                 organizer: 'Frederic Pun',
                 color: colors.WORKSHOP,
                 time: ['9:00', '10:00'],
@@ -126,6 +139,7 @@ export const schedule = [
             {
                 title: 'Data Sketching Workshop',
                 location: 'IC 220',
+                description: ``,
                 organizer: 'William Yun',
                 color: colors.WORKSHOP,
                 time: ['10:00', '11:00'],
@@ -133,6 +147,7 @@ export const schedule = [
             {
                 title: 'Fuse Workshop',
                 location: 'IC 320',
+                description: `What could be more cool than talking about FUSION and how it works with technology? AI is reshaping every industry, today. Fusion energy could be compared to be at a similar state in ~5 years ago. Fusion energy is going to be a game changer to a ton of industries: medicine, electricity, space thrusters, transportation, etc. Interstellar travel? Fusion propulsion is the key to unlocking the vast distances beyond orbit. With the cost to Low Earth Orbit (LEO) plummeting, space is about to be open for business. An unimaginable abundance of resources awaits. So the next big thing? Fusion energy!`,
                 organizer: 'FUSE',
                 color: colors.WORKSHOP,
                 time: ['10:00', '11:00'],
@@ -140,6 +155,7 @@ export const schedule = [
             {
                 title: 'Lunch',
                 location: 'IC 120',
+                description: `Chicken Chow Mein & Spring Rolls`,
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
                 time: ['11:00', '13:00'],
@@ -147,6 +163,7 @@ export const schedule = [
             {
                 title: 'L. Danukarjanto Workshop',
                 location: 'IC 320',
+                description: ``,
                 organizer: 'Luki Danukarjanto',
                 color: colors.WORKSHOP,
                 time: ['11:00', '12:00'],
@@ -154,6 +171,7 @@ export const schedule = [
             {
                 title: "Omar's Advanced React",
                 location: 'IC 220',
+                description: ``,
                 organizer: 'Omar',
                 color: colors.WORKSHOP,
                 time: ['11:00', '12:00'],
@@ -161,6 +179,7 @@ export const schedule = [
             {
                 title: 'Framework for Tackling AI/ML Challenges',
                 location: 'IC 220',
+                description: ``,
                 organizer: 'T4G',
                 color: colors.WORKSHOP,
                 time: ['12:00', '13:00'],
@@ -168,6 +187,7 @@ export const schedule = [
             {
                 title: 'React Native Creative Workshop',
                 location: 'IC 220',
+                description: ``,
                 organizer: 'Ralph / Sergey Gavrilyuk',
                 color: colors.WORKSHOP,
                 time: ['13:00', '16:00'],
@@ -175,6 +195,7 @@ export const schedule = [
             {
                 title: 'Fly With Oragami',
                 location: 'TBA',
+                description: ``,
                 organizer: 'Fly With Oragami',
                 color: colors.WORKSHOP,
                 time: ['13:00', '18:00'],
@@ -182,6 +203,7 @@ export const schedule = [
             {
                 title: "Nasir's Hot Dogs",
                 location: 'Outside SC',
+                description: `Hot dogs (obviously) - available from 1pm to 9pm`,
                 organizer: "Nasir's Hot Dogs",
                 color: colors.FOOD,
                 time: ['13:00', '21:00'],
@@ -189,6 +211,7 @@ export const schedule = [
             {
                 title: "Founder's Beta",
                 location: 'IC 320',
+                description: ``,
                 organizer: 'Eric Rafat',
                 color: colors.WORKSHOP,
                 time: ['13:00', '14:00'],
@@ -196,6 +219,7 @@ export const schedule = [
             {
                 title: 'Women in Code Summit',
                 location: 'IC 320',
+                description: ``,
                 organizer: 'Women in Code',
                 color: colors.SUMMIT,
                 time: ['14:00', '17:00'],
@@ -203,13 +227,15 @@ export const schedule = [
             {
                 title: 'FGF Snacks',
                 location: 'IC/EV Atrium',
-                organizer: 'Hack The Valley',
+                description: `Muffins, Loaves and Croissants. Yum!`,
+                organizer: 'FGF Brands',
                 color: colors.FOOD,
                 time: ['15:00', '17:00'],
             },
             {
                 title: 'PayTrie',
                 location: 'IC 220',
+                description: ``,
                 organizer: 'PayTrie',
                 color: colors.WORKSHOP,
                 time: ['17:00', '18:00'],
@@ -217,6 +243,7 @@ export const schedule = [
             {
                 title: 'Dinner',
                 location: 'IC 120',
+                description: `Fettuccine Alfredo & Garlic Toast`,
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
                 time: ['18:00', '21:00'],
@@ -224,6 +251,7 @@ export const schedule = [
             {
                 title: 'Black in Tech Summit',
                 location: 'IC 320',
+                description: ``,
                 organizer: 'Black in Tech',
                 color: colors.SUMMIT,
                 time: ['18:00', '21:00'],
@@ -231,6 +259,7 @@ export const schedule = [
             {
                 title: 'MLH Cup Stacking',
                 location: 'IC/EV Atrium',
+                description: ``,
                 organizer: 'Major League Hacking',
                 color: colors.MLH,
                 time: ['21:00', '22:00'],
@@ -238,13 +267,15 @@ export const schedule = [
             {
                 title: 'Resume Roast Session',
                 location: 'TBA',
-                organizer: 'Moe Ali',
-                color: colors.WORKSHOP,
+                description: `Let ourselves and a group of recruiters and talent specialists roast and pick apart your resume!`,
+                organizer: 'Hack the Valley - Moe Ali',
+                color: colors.HTV,
                 time: ['22:00', '23:00'],
             },
             {
                 title: 'NoSQL Workshop',
                 location: 'IC 220',
+                description: ``,
                 organizer: 'Kevin Shen',
                 color: colors.WORKSHOP,
                 time: ['22:00', '23:00'],
@@ -252,6 +283,7 @@ export const schedule = [
             {
                 title: 'Docker DevOps Workshop',
                 location: 'IC 220',
+                description: ``,
                 organizer: 'Samiul Haque',
                 color: colors.WORKSHOP,
                 time: ['23:00', '0:00'],
@@ -259,8 +291,9 @@ export const schedule = [
             {
                 title: 'PowerPoint Improv',
                 location: 'TBA',
-                organizer: 'Moe Ali',
-                color: colors.WORKSHOP,
+                description: `Join us for a game of PowerPoint Improv where candidates perform a presentation using a slideshow they've never seen before, for a chance to WIN a MUSE HEADBAND. We'll help you with your presentation skills to nail that pitch (and also it's just really funny).`,
+                organizer: 'Hack the Valley - Moe Ali',
+                color: colors.HTV,
                 time: ['0:00', '1:00'],
             },
         ],
@@ -271,6 +304,7 @@ export const schedule = [
             {
                 title: 'Breakfast',
                 location: 'IC 120',
+                description: `Pancakes and Sausages`,
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
                 time: ['8:00', '10:00'],
@@ -278,6 +312,7 @@ export const schedule = [
             {
                 title: 'Project Submission',
                 location: 'TBA',
+                description: ``,
                 organizer: 'Hack The Valley',
                 color: colors.HTV,
                 time: ['10:00', '10:30'],
@@ -285,6 +320,7 @@ export const schedule = [
             {
                 title: 'Judging',
                 location: 'IC/EV Atrium',
+                description: ``,
                 organizer: 'Hack The Valley',
                 color: colors.HTV,
                 time: ['11:00', '15:00'],
@@ -292,6 +328,7 @@ export const schedule = [
             {
                 title: 'Late Lunch',
                 location: 'IC 120',
+                description: `Curry Chicken`,
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
                 time: ['13:00', '15:00'],
@@ -299,6 +336,7 @@ export const schedule = [
             {
                 title: 'Closing Ceremony',
                 location: 'IC 130',
+                description: ``,
                 organizer: 'Hack The Valley',
                 color: colors.HTV,
                 time: ['15:00', '17:00'],
