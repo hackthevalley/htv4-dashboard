@@ -72,7 +72,7 @@ export const schedule = [
                 organizer: 'Kaveen',
                 color: colors.WORKSHOP,
                 link: '',
-                time: ['1:00', '3:00'],
+                time: ['1:00', '2:00'],
             },
             {
                 title: 'CheaprEats Workshop',

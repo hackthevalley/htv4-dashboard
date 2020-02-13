@@ -22,8 +22,6 @@ export const Line = ({ header }) => {
         return () => window.clearInterval(timer);
     }, []);
 
-    console.log(header, top);
-
     return (
         top >= 0 && (
             <HLine offset={(header.current || {}).offsetHeight} top={top}>
