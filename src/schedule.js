@@ -180,7 +180,7 @@ export const schedule = [
                 title: "Advanced React",
                 location: 'IC 220',
                 description: `Take your React code to the next level: hooks, portals, context, suspense, and error boundaries.`,
-                organizer: 'Omar' Chehab,
+                organizer: 'Omar Chehab',
                 color: colors.WORKSHOP,
                 time: ['11:00', '12:00'],
             },
