@@ -102,7 +102,7 @@ export const schedule = [
             {
                 title: 'GraphQL Workshop',
                 location: 'IC 320',
-                description: ``,
+                description: `Learn how GraphQL works, play around with a real API, and write a simple Python program to search your favourite dishes! You will need a laptop with Python 3 installed.`,
                 organizer: 'Jun Zheng',
                 color: colors.WORKSHOP,
                 time: ['1:00', '2:00'],
