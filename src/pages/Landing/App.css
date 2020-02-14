@@ -1,0 +1,173 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+/*Toggle mobile or desktop view*/
+@media only screen and (max-width: 600px) {
+  #rightdesktop {
+     display: none;
+     pointer-events: none;
+  }
+  #leftdesktop {
+    display: none;
+    pointer-events: none;
+ }
+}
+
+@media only screen and (min-width: 601px) {
+  #leftdesktopmobile {
+     display: none;
+     pointer-events: none;
+  }
+}
+
+/* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+#leftdesktop {
+  left: 0;
+  background-image:linear-gradient(to right, #001510, #00bf8f);
+}
+#leftdesktopmobile {
+  background-image:linear-gradient(to right, #001510, #00bf8f);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-image:url(pusheen.jpg);
+  background-size: cover;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+
+h1 {
+  margin-bottom: 200px;
+  font-size: 550%;
+  color: white;
+  text-align: center;
+}
+h2 {
+  font-size: 300%;
+  color: white;
+  text-align: center;
+}
+h3 {
+  font-size:100%;
+  color: rgba(255, 255, 255, 0.575);
+  text-align: center;
+}
+h4 {
+  font-size:90%;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+body {
+  background: #00bf8f;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #001510, #00bf8f);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #001510, #00bf8f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+input{
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  height:25px;
+  font-size:12pt;
+  }
+input[type="submit"]{
+  background-color: #61dafb;
+  color: #282c34
+}
+
+body {
+  font-family: sans-serif;
+}
+a {
+  color: #369;
+}
+.note {
+  width: 500px;
+  margin: 50px auto;
+  font-size: 1.1em;
+  color: #333;
+  text-align: justify;
+}
+#wrapper {
+  overflow: hidden;
+}
+p {
+  margin-top: 0;
+  color:white
+}
+b {
+  color:white
+}
+.my-form {
+  margin-bottom: 10px;
+}
+#gallery {
+  margin-top: 10px;
+}
+#gallery img {
+  width: 150px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.button {
+  display: inline-block;
+  padding: 10px;
+  background: #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.button:hover {
+  background: #ddd;
+}
