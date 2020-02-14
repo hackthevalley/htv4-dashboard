@@ -96,9 +96,7 @@ export const Event = ({ event }) => {
                 </Header>
                 <CardBody>
                     {event.description && (
-                        <Paragraph margin="10px 0 0" bold>
-                            {event.description}
-                        </Paragraph>
+                        <Paragraph bold>{event.description}</Paragraph>
                     )}
                     <Button
                         onClick={() => modalState[1](false)}
