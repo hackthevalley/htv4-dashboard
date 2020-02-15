@@ -5,15 +5,16 @@ import { DateColumn } from './DateColumn';
 import { TimeColumn } from './TimeColumn';
 import { Line } from './Line';
 
+const slots = 38;
 export const Schedule = ({ schedule }) => {
     const dates = Object.values(schedule);
     const el = useRef();
     return (
         <Layout>
             <Content>
-                <TimeColumn ref={el} />
+                <TimeColumn ref={el} slots={slots} />
                 {dates.map((item, index) => (
-                    <DateColumn item={item} key={index} />
+                    <DateColumn item={item} slots={slots} key={index} />
                 ))}
                 <Line header={el} />
             </Content>

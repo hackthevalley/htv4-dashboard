@@ -38,13 +38,13 @@ const init = ({ events }) => {
     });
 };
 
-export const DateColumn = ({ item }) => {
+export const DateColumn = ({ item, slots }) => {
     const events = init(item);
     return (
         <Container>
             <DateHeader date={item.date} />
             <Content>
-                {new Array(36).fill().map((i, index) => (
+                {new Array(slots).fill().map((i, index) => (
                     <Grid key={index} />
                 ))}
                 {events.map((event, index) => (
