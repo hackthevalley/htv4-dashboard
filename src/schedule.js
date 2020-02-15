@@ -318,7 +318,7 @@ export const schedule = [
                 description: `Pancakes and Sausages`,
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
-                time: ['8:00', '10:00'],
+                time: ['9:00', '10:00'],
             },
             {
                 title: 'Project Submission',
