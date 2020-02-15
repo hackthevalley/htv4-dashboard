@@ -283,14 +283,14 @@ export const schedule = [
                 color: colors.WORKSHOP,
                 time: ['22:00', '23:00'],
             },
-            /*{
+            {
                 title: 'HTV T-shirts',
                 location: 'IC Artium',
                 description: ``,
                 organizer: 'Hack the Valley',
                 color: colors.HTV,
                 time: ['22:30', '23:30'],
-            },*/
+            },
             {
                 title: 'Docker DevOps Workshop',
                 location: 'IC 220',
