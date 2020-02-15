@@ -125,7 +125,7 @@ export const schedule = [
                 location: 'IC 120',
                 description: ``,
                 organizer: 'Hack The Valley',
-                color: colors.FOOD,
+                color: colors.WORKSHOP,
                 time: ['8:00', '9:00'],
             },
             {
