@@ -244,14 +244,6 @@ export const schedule = [
                 time: ['15:00', '17:00'],
             },
             {
-                title: 'PayTrie',
-                location: 'IC 220',
-                description: ``,
-                organizer: 'PayTrie',
-                color: colors.WORKSHOP,
-                time: ['17:00', '18:00'],
-            },
-            {
                 title: 'Dinner',
                 location: 'IC 120',
                 description: `Fettuccine Alfredo & Garlic Toast`,
@@ -291,6 +283,14 @@ export const schedule = [
                 color: colors.WORKSHOP,
                 time: ['22:00', '23:00'],
             },
+            /*{
+                title: 'HTV T-shirts',
+                location: 'IC Artium',
+                description: ``,
+                organizer: 'Hack the Valley',
+                color: colors.HTV,
+                time: ['22:30', '23:30'],
+            },*/
             {
                 title: 'Docker DevOps Workshop',
                 location: 'IC 220',
