@@ -62,20 +62,6 @@ export const schedule = [
                 time: ['20:00', '22:00'],
             },
             {
-                title: 'Midnight Snack',
-                location: 'IC 120',
-                description: (
-                    <img
-                        alt="boba life"
-                        width="100%"
-                        src="https://thumbs.gfycat.com/PassionateVagueCattle-size_restricted.gif"
-                    />
-                ),
-                organizer: 'Hack The Valley',
-                color: colors.FOOD,
-                time: ['22:00', '0:00'],
-            },
-            {
                 title: 'Team Building Workshop #2',
                 location: 'IC 110',
                 description: `Still don't have a team? No sweat! Come to IC110 and we'll help you form your group!`,
@@ -106,6 +92,20 @@ export const schedule = [
                 organizer: 'Jun Zheng',
                 color: colors.WORKSHOP,
                 time: ['1:00', '2:00'],
+            },
+            {
+                title: 'Night Owl Snack',
+                location: 'IC 120',
+                description: (
+                    <img
+                        alt="boba life"
+                        width="100%"
+                        src="https://thumbs.gfycat.com/PassionateVagueCattle-size_restricted.gif"
+                    />
+                ),
+                organizer: 'Hack The Valley',
+                color: colors.FOOD,
+                time: ['2:00', '3:00'],
             },
         ],
     },
@@ -177,7 +177,7 @@ export const schedule = [
                 time: ['11:00', '12:00'],
             },
             {
-                title: "Advanced React",
+                title: 'Advanced React',
                 location: 'IC 220',
                 description: `Take your React code to the next level: hooks, portals, context, suspense, and error boundaries.`,
                 organizer: 'Omar Chehab',
