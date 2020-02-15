@@ -78,6 +78,23 @@ export const schedule = [
                 time: ['23:00', '1:00'],
             },
             {
+                title: 'Midnight Snack',
+                location: 'IC 120 / IC 318',
+                description: (
+                    <>
+                        <img
+                            alt="boba life"
+                            width="100%"
+                            src="https://thumbs.gfycat.com/PassionateVagueCattle-size_restricted.gif"
+                        />
+                        and Croissants (Croissants at IC 120)
+                    </>
+                ),
+                organizer: 'Hack The Valley',
+                color: colors.FOOD,
+                time: ['0:30', '1:30'],
+            },
+            {
                 title: 'Intro to APIs with GCP',
                 location: 'IC 220',
                 description: ``,
@@ -92,20 +109,6 @@ export const schedule = [
                 organizer: 'Jun Zheng',
                 color: colors.WORKSHOP,
                 time: ['1:00', '2:00'],
-            },
-            {
-                title: 'Night Owl Snack',
-                location: 'IC 120',
-                description: (
-                    <img
-                        alt="boba life"
-                        width="100%"
-                        src="https://thumbs.gfycat.com/PassionateVagueCattle-size_restricted.gif"
-                    />
-                ),
-                organizer: 'Hack The Valley',
-                color: colors.FOOD,
-                time: ['2:00', '3:00'],
             },
         ],
     },

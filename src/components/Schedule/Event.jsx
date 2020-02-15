@@ -31,7 +31,7 @@ export const Event = ({ event }) => {
     const to = moment(event.time[1], 'HH:mm');
     const cells = getDuration(from, to);
     const modalState = useState();
-    const top = getTop(from) * 2;
+    const top = getTop(from) * 2 + from.minutes() / 30;
 
     const select = () => {
         modalState[1](true);
