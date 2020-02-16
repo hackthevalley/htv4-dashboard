@@ -309,7 +309,7 @@ export const schedule = [
             },
             {
                 title: 'System Administration Workshop',
-                location: 'IC 220',
+                location: 'IC 320',
                 description: `Learn the basics of Linux shell scripting
 Learn about the client-server model
 Deploy your hackathon project to the cloud`,
