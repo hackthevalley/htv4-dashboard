@@ -269,7 +269,7 @@ export const schedule = [
             },
             {
                 title: 'Resume Roast Session',
-                location: 'TBA',
+                location: 'IC 130',
                 description: `Let ourselves and a group of recruiters and talent specialists roast and pick apart your resume!`,
                 organizer: 'Hack the Valley - Moe Ali',
                 color: colors.HTV,
