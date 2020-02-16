@@ -328,7 +328,7 @@ Deploy your hackathon project to the cloud`,
                 description: `Pancakes and Sausages`,
                 organizer: 'Hack The Valley',
                 color: colors.FOOD,
-                time: ['9:00', '10:00'],
+                time: ['9:30', '10:30'],
             },
             {
                 title: 'Project Submission',
