@@ -5,7 +5,7 @@ import { DateColumn } from './DateColumn';
 import { TimeColumn } from './TimeColumn';
 import { Line } from './Line';
 
-const slots = 38;
+const slots = 36;
 export const Schedule = ({ schedule }) => {
     const dates = Object.values(schedule);
     const el = useRef();
