@@ -307,6 +307,16 @@ export const schedule = [
                 color: colors.HTV,
                 time: ['0:00', '1:00'],
             },
+            {
+                title: 'System Administration Workshop',
+                location: 'IC 320',
+                description: `Learn the basics of Linux shell scripting
+Learn about the client-server model
+Deploy your hackathon project to the cloud`,
+                organizer: 'Omar Chehab',
+                color: colors.WORKSHOP,
+                time: ['1:00', '2:00'],
+            },
         ],
     },
     {
